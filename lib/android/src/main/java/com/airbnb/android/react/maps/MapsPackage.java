@@ -2,6 +2,12 @@ package com.airbnb.android.react.maps;
 
 import android.app.Activity;
 
+import com.airbnb.android.react.maps.amap.AMapCalloutManager;
+import com.airbnb.android.react.maps.amap.AMapCircleManager;
+import com.airbnb.android.react.maps.amap.AMapMarkerManager;
+import com.airbnb.android.react.maps.amap.AMapPolygonManager;
+import com.airbnb.android.react.maps.amap.AMapPolylineManager;
+import com.airbnb.android.react.maps.amap.AMapViewManager;
 import com.facebook.react.ReactPackage;
 import com.facebook.react.bridge.JavaScriptModule;
 import com.facebook.react.bridge.NativeModule;
@@ -40,6 +46,19 @@ public class MapsPackage implements ReactPackage {
         AirMapLiteManager mapLiteManager = new AirMapLiteManager(reactContext);
         AirMapUrlTileManager tileManager = new AirMapUrlTileManager(reactContext);
 
+        AMapCalloutManager amapCalloutManager = new AMapCalloutManager();
+        AMapMarkerManager amapAnnotationManager = new AMapMarkerManager();
+        AMapPolylineManager amapPolylineManager = new AMapPolylineManager(reactContext);
+        AMapPolygonManager amapPolygonManager = new AMapPolygonManager(reactContext);
+        AMapCircleManager amapCircleManager = new AMapCircleManager(reactContext);
+
+        AMapViewManager amapMapManager = new AMapViewManager(
+                amapAnnotationManager,
+                amapPolylineManager,
+                amapPolygonManager,
+                amapCircleManager
+        );
+
         return Arrays.<ViewManager>asList(
                 calloutManager,
                 annotationManager,
@@ -48,6 +67,17 @@ public class MapsPackage implements ReactPackage {
                 circleManager,
                 mapManager,
                 mapLiteManager,
-                tileManager);
+                tileManager,
+
+                //amap
+
+                amapCalloutManager,
+                amapAnnotationManager,
+                amapPolylineManager,
+                amapPolygonManager,
+                amapCircleManager,
+                amapMapManager
+
+                );
     }
 }

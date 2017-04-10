@@ -11,8 +11,8 @@ import MapView from 'react-native-maps';
 const { width, height } = Dimensions.get('window');
 
 const ASPECT_RATIO = width / height;
-const LATITUDE = 37.78825;
-const LONGITUDE = -122.4324;
+const LATITUDE = 22.78825;
+const LONGITUDE = 114.4324;
 const LATITUDE_DELTA = 0.0922;
 const LONGITUDE_DELTA = LATITUDE_DELTA * ASPECT_RATIO;
 
@@ -46,10 +46,10 @@ class StaticMap extends React.Component {
           <Text>cause</Text>
           <Text>the</Text>
           <MapView
-            provider={this.props.provider}
+            provider={"amap"}
             style={styles.map}
             scrollEnabled={false}
-            zoomEnabled={false}
+            zoomEnabled={true}
             pitchEnabled={false}
             rotateEnabled={false}
             initialRegion={this.state.region}

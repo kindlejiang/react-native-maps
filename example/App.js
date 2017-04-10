@@ -9,7 +9,8 @@ import {
   Switch,
 } from 'react-native';
 import { PROVIDER_GOOGLE, PROVIDER_DEFAULT } from 'react-native-maps';
-import DisplayLatLng from './examples/DisplayLatLng';
+
+/*import DisplayLatLng from './examples/DisplayLatLng';
 import ViewsAsMarkers from './examples/ViewsAsMarkers';
 import EventListener from './examples/EventListener';
 import MarkerTypes from './examples/MarkerTypes';
@@ -36,6 +37,9 @@ import LegalLabel from './examples/LegalLabel';
 import SetNativePropsOverlays from './examples/SetNativePropsOverlays';
 import CustomOverlay from './examples/CustomOverlay';
 import BugMarkerWontUpdate from './examples/BugMarkerWontUpdate';
+*/
+
+import StaticMap from './examples/StaticMap';
 
 const IOS = Platform.OS === 'ios';
 const ANDROID = Platform.OS === 'android';
@@ -124,7 +128,7 @@ class App extends React.Component {
     return this.renderExamples([
       // [<component>, <component description>, <Google compatible>, <Google add'l description>]
       [StaticMap, 'StaticMap', true],
-      [DisplayLatLng, 'Tracking Position', true, '(incomplete)'],
+     /* [DisplayLatLng, 'Tracking Position', true, '(incomplete)'],
       [ViewsAsMarkers, 'Arbitrary Views as Markers', true],
       [EventListener, 'Events', true, '(incomplete)'],
       [MarkerTypes, 'Image Based Markers', true],
@@ -150,6 +154,7 @@ class App extends React.Component {
       [SetNativePropsOverlays, 'Update native props', true],
       [CustomOverlay, 'Custom Overlay Component', true],
       [BugMarkerWontUpdate, 'BUG: Marker Won\'t Update (Android)', true],
+      */
     ]
     // Filter out examples that are not yet supported for Google Maps on iOS.
     .filter(example => ANDROID || (IOS && (example[2] || !this.state.useGoogleMaps)))

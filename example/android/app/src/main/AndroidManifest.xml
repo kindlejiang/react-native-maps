@@ -10,6 +10,9 @@
       android:name=".ExampleApplication"
       android:icon="@mipmap/ic_launcher"
       android:theme="@style/AppTheme">
+        <meta-data
+            android:name="com.amap.api.v2.apikey"
+            android:value="c5be0bb9d71d38d8daffdca1bd75747b" />
       <activity
         android:name=".MainActivity"
         android:label="@string/app_name"
